@@ -1,5 +1,5 @@
 const a= {
-name:"hanna",
+name:"hanna123",
 
 }
 console.log(a.name);
