@@ -1,6 +1,7 @@
 const a= {
 name:"hanna123",
-address:"mt"
+address:"mt",
+address2:"mt2"
 
 }
 console.log(a.name);
