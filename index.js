@@ -24,7 +24,16 @@ let checking = checkAge();
 console.log(checking);
 
 for(var i=2; i<=9; i++){
-    for(var j=2; j<=9; j++){
+    for(var j=1; j<=9; j++){
         console.log(i+"*"+j+"="+i*j);
     }
 }
+
+let box = "";
+for(var i=2; i<=9; i++){
+    for(var j=1; j<=9; j++){
+        box += i+"*"+j+"="+i*j+"\t";
+    }
+    box +="\n";
+}
+console.log(box);
