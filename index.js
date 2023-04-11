@@ -37,3 +37,20 @@ for(var i=2; i<=9; i++){
     box +="\n";
 }
 console.log(box);
+
+const numbers = [23,45,64,4];
+const newArr = numbers.map(myFunction);
+console.log(newArr);
+function myFunction(num) {
+    return num * 10;
+}
+
+var officers = [
+    { id: 20, name: 'Captain Piett' },
+    { id: 24, name: 'General Veers' },
+    { id: 56, name: 'Admiral Ozzel' },
+    { id: 88, name: 'Commander Jerjerrod' }
+  ];
+
+  const officerIds = officers.map(officer =>officer.id);
+  console.log(officerIds);
