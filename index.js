@@ -136,4 +136,32 @@ let tv2 = new TV('ultra tv',200,'27inch');
 
 console.log(tv1);
 console.log(tv2);
-  
+
+for(i=2; i<=9; i++){
+  for(j=1; j<=9; j++){
+    console.log(i+"*"+j+"="+i*j);
+  }
+}
+
+for(i=2; i<=9; i++){
+  for(j=1; j<=9; j++){
+    if(i !==3){
+    console.log(i+"*"+j+"="+i*j)};
+  }
+}
+
+for(i=2; i<=9; i++){
+  for(j=1; j<=9; j++){
+    if(i %2==0){
+    console.log(i+"*"+j+"="+i*j)};
+  }
+}
+
+for(i=2; i<=9; i++){
+  for(j=1; j<=9; j++){
+    if(i %2!==0){
+    console.log(i+"*"+j+"="+i*j)};
+  }
+}
+
+
