@@ -117,5 +117,23 @@ var officers = [
 
   console.log(rebels);
   console.log(empire);
-  
+
+  let name = 'samsung store'
+
+class TV{
+    name='';
+    price=0;
+    size=''
+    constructor(name,price,size){
+        this.name=name
+        this.price=price
+        this.size=size
+    }
+}
+
+let tv1 = new TV('noona tv',200,'56inch');
+let tv2 = new TV('ultra tv',200,'27inch');  
+
+console.log(tv1);
+console.log(tv2);
   
