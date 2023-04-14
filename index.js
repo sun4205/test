@@ -164,4 +164,22 @@ for(i=2; i<=9; i++){
   }
 }
 
+class House {
+  constructor(color){
+    this.color = color
+  }
+  getFurniture(){
+    return 'sofa'
+  }
+}
+  let houseObject = new House('red')
+  let houseObject2 = new House('blue')
+
+  console.log(houseObject.color)
+  console.log(houseObject.getFurniture())
+
+  console.log(houseObject2.color)
+  console.log(houseObject2.getFurniture())
+  
+
 
