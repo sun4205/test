@@ -180,6 +180,23 @@ class House {
 
   console.log(houseObject2.color)
   console.log(houseObject2.getFurniture())
+
+  for(var i=2; i<=9; i++){
+    for(var j=1; j<=9; j++){
+      console.log(i + "*" + j + "=" + i*j)
+    }
+  }
+
+ for(var i=2; i<=9; i++){
+  for(var j=1; j<=9; j++){
+    if(i !==8){
+      console.log(i + "*" + j + "=" + i*j);
+    }
+  }
+ }
+
+ 
+  
   
 
 
