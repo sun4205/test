@@ -195,7 +195,33 @@ class House {
   }
  }
 
+ for(var i=0; i<=100; i++){
+  console.log(i);
+ }
+
+ for(var i=20; i<=20; i++){
+  for(var j=1; j<=9; j++){
+    console.log(i + "*" + j + "=" + i*j);
+  }
+ }
+
+ for(var i=2; i<=100; i++){
+   for(var j=1; j<=9; j++){
+    if(i%2==0){
+    console.log(i+"*"+j+"="+i*j)
+    }
+   }
+ }
+
+ for(var i=2; i<=100; i++){
+  for(var j=1; j<=9; j++){
+    if(i %2 !==0){
+      console.log(i+"*"+j+"="+i*j);
+    }
+  }
+ }
  
+
   
   
 
