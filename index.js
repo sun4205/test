@@ -220,6 +220,15 @@ class House {
     }
   }
  }
+
+ let container='';
+ for(var i=2; i<=100; i++){
+  for(var j=1; j<=9; j++){
+    box +=i+"*"+j+"="+i*j;
+  }
+  
+ }
+ console.log(container);
  
 
   
