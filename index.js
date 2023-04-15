@@ -229,6 +229,37 @@ class House {
   
  }
  console.log(container);
+
+ var foods =[
+  {number:1,name:"apple"},
+  {number:2,name:"grape"},
+  {number:3,name:"orange"},
+ ];
+
+ const foodNumber = foods.map(food => food.number);
+ console.log(foodNumber);
+
+ var books =[
+  {number:1, type:"fiction"},
+  {number:2, type:"education"},
+  {number:3, type:"science"},
+ ];
+
+ const booksNumber = books.map(book => book.number);
+ console.log(booksNumber);
+
+ var schools =[
+  {type:1, location:"queens"},
+  {type:2, location:"manhattan"},
+  {type:3, location:"bayside"},
+ ];
+
+ const schoolsLocation =schools.map(school =>school.location);
+ console.log(schoolsLocation);
+
+
+
+ 
  
 
   
