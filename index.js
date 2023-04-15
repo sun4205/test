@@ -257,6 +257,10 @@ class House {
  const schoolsLocation =schools.map(school =>school.location);
  console.log(schoolsLocation);
 
+ let messages =["javascript","is","fun"];
+ const jointString = messages.reduce((acc,message)=>acc+messages);
+ console.log(jointString);
+
 
 
  
