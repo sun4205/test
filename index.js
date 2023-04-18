@@ -273,7 +273,25 @@ function Person(name,age,gender){
 var person1 = new Person("Alice", 25, "Female");
 person1.introduce();
 
+class Animal1 {
+  constructor(name){
+    this.name = name;
+  }
+  speak(){
+    console.log(this.name+" makes a noise");
+  }
 
+}
+
+class Dog extends Animal1{
+  speak(){
+    console.log(this.name + " barks.")
+  }
+}
+
+var dog1 = new Dog("Buddy");
+console.log(dog1.name);
+dog1.speak();
 
  
  
