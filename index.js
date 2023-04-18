@@ -257,9 +257,21 @@ class House {
  const schoolsLocation =schools.map(school =>school.location);
  console.log(schoolsLocation);
 
- let messages =["javascript","is","fun"];
- const jointString = messages.reduce((acc,message)=>acc+messages);
- console.log(jointString);
+ let messages = ["javascript", "is", "fun"];
+const jointString = messages.reduce((acc, message) => acc + message, "");
+console.log(jointString);
+
+function Person(name,age,gender){
+  this.name = name;
+  this.age=age;
+  this.gender=gender;
+
+  this.introduce = function(){
+    console.log("Hi My name is "+this.name+" I am "+this.age+" years old. ");
+  }
+}
+var person1 = new Person("Alice", 25, "Female");
+person1.introduce();
 
 
 
