@@ -302,6 +302,10 @@ let myNumb =[1,2,3,4,5];
 let sum = myNumb.reduce((accumulator,currentValue)=>accumulator+currentValue,0);
 console.log(sum);
 
+let myNum=[1,2,3,4,5];
+let evenNumbers = myNum.filter(number =>number%2===0);
+console.log(evenNumbers);
+
 
  
  
