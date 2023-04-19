@@ -293,6 +293,12 @@ var dog1 = new Dog("Buddy");
 console.log(dog1.name);
 dog1.speak();
 
+let myNumbers =[1,2,3,4,5];
+let doublenumbers =myNumbers.map(number =>number*2);
+
+console.log(doublenumbers);
+
+
  
  
 
