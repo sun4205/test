@@ -298,6 +298,10 @@ let doublenumbers =myNumbers.map(number =>number*2);
 
 console.log(doublenumbers);
 
+let myNumb =[1,2,3,4,5];
+let sum = myNumb.reduce((accumulator,currentValue)=>accumulator+currentValue,0);
+console.log(sum);
+
 
  
  
