@@ -306,6 +306,12 @@ let myNum=[1,2,3,4,5];
 let evenNumbers = myNum.filter(number =>number%2===0);
 console.log(evenNumbers);
 
+for(i=2; i<10; i++){
+  for(j=1; j<10; j++){
+    console.log(i + "*" + j + "=" + i*j);
+  } 
+}
+
 
  
  
