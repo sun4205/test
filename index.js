@@ -310,7 +310,12 @@ for(i=2; i<10; i++){
   for(j=1; j<10; j++){
     console.log(i + "*" + j + "=" + i*j);
   } 
-}
+
+  }
+
+  let anotherNum = [2,6,7,3,9,10];
+  let filteredNumbers = anotherNum.filter(number => number>5);
+  console.log(filteredNumbers);
 
 
  
