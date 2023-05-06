@@ -330,6 +330,40 @@ for(i=2; i<10; i++){
   console.log(MathHelper.square(3)); // Output: 9
   console.log(MathHelper.cube(3));   // Output: 27
   
+  class Animal {
+    constructor(name) {
+      this.name = name;
+    }
+  
+    speak() {
+      console.log(`${this.name} makes a noise.`);
+    }
+  
+    static eat(food) {
+      console.log(`Eating ${food}...`);
+    }
+  }
+  
+  class Dog extends Animal {
+    constructor(name, breed) {
+      super(name);
+      this.breed = breed;
+    }
+  
+    speak() {
+      console.log(`${this.name} barks.`);
+    }
+  }
+  
+  const animal = new Animal('Animal');
+  animal.speak(); // Output: "Animal makes a noise."
+  
+  const dog = new Dog('Max', 'Golden Retriever');
+  dog.speak(); // Output: "Max barks."
+  
+  Animal.eat('meat'); // Output: "Eating meat..."
+  Dog.eat('dog food'); // Throws an error: "TypeError: Dog.eat is not a function"
+  
  
  
 
