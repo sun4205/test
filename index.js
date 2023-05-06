@@ -317,7 +317,19 @@ for(i=2; i<10; i++){
   let filteredNumbers = anotherNum.filter(number => number>5);
   console.log(filteredNumbers);
 
-
+  class MathHelper {
+    static square(n) {
+      return n * n;
+    }
+  
+    static cube(n) {
+      return n * n * n;
+    }
+  }
+  
+  console.log(MathHelper.square(3)); // Output: 9
+  console.log(MathHelper.cube(3));   // Output: 27
+  
  
  
 
