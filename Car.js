@@ -22,10 +22,8 @@ console.log(objectMap)
 
 
 
-function A() {
-  return 123;
-}
-
-() => {
-  return 123;
-}
+let numbs = [1,2,3,4,5];
+let doublenumbs = numbs.map((numb) => {
+  return numb *2;
+});
+console.log(doublenumbs);
