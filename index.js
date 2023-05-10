@@ -364,6 +364,19 @@ for(i=2; i<10; i++){
   Animal.eat('meat'); // Output: "Eating meat..."
   Dog.eat('dog food'); // Throws an error: "TypeError: Dog.eat is not a function"
   
+  const products = [
+    { name: "Apple", category: "Fruit", price: 1.5 },
+    { name: "Carrot", category: "Vegetable", price: 0.75 },
+    { name: "Orange", category: "Fruit", price: 2.0 },
+    { name: "Broccoli", category: "Vegetable", price: 1.25 }
+  ];
+  
+  const expensiveProducts = products.filter((product) =>{
+  return product.price > 1.0;
+  }) 
+    
+  
+  console.log(expensiveProducts);
  
  
 
