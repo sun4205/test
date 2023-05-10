@@ -27,3 +27,17 @@ let doublenumbs = numbs.map((numb) => {
   return numb *2;
 });
 console.log(doublenumbs);
+
+const products = [
+  { name: "Apple", category: "Fruit", price: 1.5 },
+  { name: "Carrot", category: "Vegetable", price: 0.75 },
+  { name: "Orange", category: "Fruit", price: 2.0 },
+  { name: "Broccoli", category: "Vegetable", price: 1.25 }
+];
+
+const expensiveProducts = products.filter((product) =>{
+return product.price > 1.0;
+}) 
+  
+
+console.log(expensiveProducts);
