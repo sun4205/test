@@ -352,6 +352,16 @@ for(i=2; i<10; i++){
   
     }
 
+    let examples = [1, 2, 3, 4, 5, 6];
+
+
+let evenexamples = examples.filter(function(example) {
+  return example % 2 === 0;
+});
+
+console.log(evenexamples);
+
+
     
  
 
