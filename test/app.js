@@ -95,3 +95,44 @@ for (let i = 1; i <= 9; i++) {
 	console.log(i);
 }
 
+function countTo(to){
+    for(let i =0; i<=to; i++){
+        console.log(i);
+    }
+}
+countTo(10);
+
+function add(a,b){
+    return a + b;
+}
+console.log(add(3,5));
+
+const subtract = function subt(a,b){
+    return a-b;
+}
+console.log(subtract(1,5));
+
+const multi = (a,b) => a*b;
+console.log(multi(4,7));
+
+const multiplay = (a,b) =>{
+
+    console.log('this is multiply')
+    return a*b;
+}
+console.log(multiplay(50,2));
+
+const myButton = document.querySelector('#myButton');
+myButton.addEventListener('click',function(){
+    console.log('click')
+});
+
+const clickPositon = document.querySelector('#clickPosition');
+clickPositon.addEventListener('click', function(e){
+    let text ='x: ';
+    text += e.clientX;
+    text = ' , Y: ';
+    text +=e.clientY;
+    clickPostion.textContent = text;
+
+});
