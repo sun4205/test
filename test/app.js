@@ -45,3 +45,53 @@ let interId;
 },1000);
 console.log(interId);
 
+const dayOfWeek = '월';
+
+switch (dayOfWeek) {
+	case '월':
+	case '화':
+	case '수':
+	case '목':
+		console.log('6시 퇴근');
+		break;
+	case '금':
+		console.log('12시 퇴근');
+		break;
+	case '토':
+	case '일':
+		console.log('휴무');
+		break;
+	default:
+		console.log('잘못된 요일입니다.');
+}
+
+const yootThrow = '도';
+
+switch (yootThrow) {
+	case '모':
+		console.log('1칸 전진');
+	case '윷':
+		console.log('1칸 전진')
+	case '걸':
+		console.log('1칸 전진')
+	case '개':
+		console.log('1칸 전진');
+	case '도':
+		console.log('1칸 전진');
+		break;
+	default:
+		console.log('무효');
+}
+
+for (let i = 1; i <= 9; i++) {
+    for (let j = 1; j <= 9; j++) {
+      console.log(i + ' X ' + j + ' = ' + i * j);
+    }
+  }
+
+  for (let i = 0; i < 100; i++) {
+	if (i % 3 === 0) continue; // 한 루프를 건너뜀
+	if (i > 10) break; // 루프 종료
+	console.log(i);
+}
+
