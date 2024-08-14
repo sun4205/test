@@ -38,3 +38,30 @@ const kingsIndexed = kings.map(function(item,index,array){
 })
 
 console.log(kingsIndexed)
+
+//sorting an array
+
+const myNumbers = [0, 3.14, 2.718, 13];
+myNumbers.sort(function(a,b){
+	return a - b;
+})
+
+console.log(myNumbers);
+
+const diseases = [
+    "Mysophobia",
+    "Fear of missing out",
+    "Erythrophobia"
+];
+
+diseases.sort(function(a,b){
+	a = a.toLowerCase();
+	b = b.toLowerCase();
+
+	if(a<b) return -1;
+	if(a>b) return 1;
+
+	return 0;
+})
+
+console.log(diseases);
