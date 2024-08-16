@@ -65,3 +65,38 @@ diseases.sort(function(a,b){
 })
 
 console.log(diseases);
+
+//functions are values
+
+const multiply = function(a,b){
+    return a * b;
+}
+multiply(2,3);
+
+const result = [1,2,3].reduce(multiply);
+console.log(result);
+
+function createFunction(){
+    function simpleFunction(){
+        console.log("hello world")
+    }
+    return simpleFunction
+}
+const newFunction = createFunction();
+newFunction();
+
+//arrow function
+
+const shorterSingleAnecdote = (joke) => `I know only one jokes:${jokes}`;
+const colorHex = () => ({white:"#FFF"});
+
+const array = [1,2,3,4];
+const newArray = array.map(ele => ele * 2);
+
+//Default parameters
+
+function generateName(firstName, lastName, middleName = ""){
+    return `${firstName} ${middleName} ${lastName} `;
+}
+
+generateName('jane','Doe');
