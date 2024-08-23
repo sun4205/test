@@ -100,3 +100,83 @@ function generateName(firstName, lastName, middleName = ""){
 }
 
 generateName('jane','Doe');
+
+//forEach() practice
+
+const how = ["harder", "better", "faster", "stronger"];
+
+how.forEach(function (item) {
+    console.log(item + ".");
+}); 
+
+const how2 = ["harder", "better", "faster", "stronger"];
+
+for (let i = 0; i < how.length; i += 1) {
+    console.log(how[i] + '.');
+}
+
+const people = [
+    "Steven Spielberg",
+    "Michael Bay",
+    "Robin Spielberg",
+    "Sasha Rebecca Spielberg",
+    "James Cameron"
+  ];
+  
+  const Spielberg = [];
+  
+  people.forEach(function (element) {
+    if(element.includes("Spielberg")){
+      Spielberg.push(element);
+    }
+  });
+  
+  console.log(Spielberg);
+
+  const greekAlphabet = 'αβγδεζηθικλμνξοπρστυφχψω';
+console.log(greekAlphabet.length); 
+
+const wrongWord = "expresso";
+console.log(wrongWord[1]); 
+
+const password = "qwerty";
+
+if (password.length<8) {
+  console.log("You call this a strong password?");
+  
+}
+
+const acrostic = [
+    "Give me your patience, sister, while I frame",
+    "Exact in capitals your golden name;",
+    "Or sue the fair Apollo and he will",
+    "Rouse from his heavy slumber and instill",
+    "Great love in me for thee and Poesy.",
+    "Imagine not that greatest mastery",
+    "And kingdom over all the Realms of verse,",
+    "Nears more to heaven in aught, than when we nurse",
+    "And surety give to love and Brotherhood.",
+    " ",
+    "Anthropophagi in Othello's mood;",
+    "Ulysses storm'd and his enchanted belt",
+    "Glow with the Muse, but they are never felt",
+    "Unbosom'd so and so eternal made,",
+    "Such tender incense in their laurel shade",
+    "To all the regent sisters of the Nine",
+    "As this poor offering to you, sister mine.",
+    " ",
+    "Kind sister! aye, this third name says you are;",
+    "Enchanted has it been the Lord knows where;",
+    "And may it taste to you like good old wine,",
+    "Take you to real happiness and give",
+    "Sons, daughters and a home like honied hive."
+  ];
+  
+  
+  let georgianaAugustaKeats = "";
+  
+  for (let i = 0; i < acrostic.length; i += 1) {
+   georgianaAugustaKeats += acrostic[i][0];
+  }
+  console.log(georgianaAugustaKeats);
+  
