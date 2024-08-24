@@ -190,3 +190,25 @@ if (message.includes("of")) {
 if (message.includes("ex")) {
   console.log("eye roll");
 }
+
+console.log("Turn Caps Lock on".toLowerCase());
+console.log("Turn Caps Lock off".toUpperCase());
+
+const firstStr = "This verification won't work"; 
+const secondStr = "thIS vEriFicaTIon won't work";
+console.log(firstStr === secondStr); 
+console.log(firstStr.toLowerCase() === secondStr.toLowerCase());
+
+console.log("I came. I saw. I conquered.".split(" "));
+console.log("I came. I saw. I conquered.".split(". "));
+console.log("Believe".slice(2, 5));
+console.log("Google Maps".slice(7));
+
+//const myName = prompt("What's your name?", "");
+
+//console.log("Hello, " + myName[0].toUpperCase() + myName.slice(1));
+
+const fourElements = "Earth, Air, Fire, Water";
+const elementsArray = fourElements.split(", ");
+
+console.log(elementsArray);
