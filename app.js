@@ -212,3 +212,17 @@ const fourElements = "Earth, Air, Fire, Water";
 const elementsArray = fourElements.split(", ");
 
 console.log(elementsArray);
+
+console.log(Math.floor(9.99));
+console.log(Math.ceil(9.01));
+console.log(Math.round(9.51));
+console.log(Math.max(1,2,3,4,5));
+console.log(Math.min(1,2,3,4,5));
+console.log(Math.random());
+
+let overtime = "17 hours, 59 minutes, and 59 seconds";
+
+console.log(parseInt(overtime));
+console.log(parseInt("99 Red Balloons"));
+console.log(parseInt("Catch 22"));
+console.log(parseFloat('98.6'));
