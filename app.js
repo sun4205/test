@@ -241,11 +241,11 @@ function checkPassword(pass) {
 checkPassword("java script");
 checkPassword("JavaScript");
 
-let pw1 = prompt("Password:");
+// let pw1 = prompt("Password:");
 
-if (!pw1) {
-  pw1 = prompt("Password is required. It mustn't be empty.");
-}
+// if (!pw1) {
+//   pw1 = prompt("Password is required. It mustn't be empty.");
+// }
 
 const answer = "To be" || "Not to be";
 console.log(answer);
@@ -280,10 +280,10 @@ checkTheCar(120000, "Tesla", true, 30000) &&
 checkTheCar(50000, "Chevrolet", false, 7000) &&
   addToMyGarage(50000, "Chevrolet", false, 7000);
 
-const t = prompt("What is your temperature?");
-const normal = t >= 96.6 && t <= 98.9;
+// const t = prompt("What is your temperature?");
+// const normal = t >= 96.6 && t <= 98.9;
 
-console.log(normal);
+// console.log(normal);
 
 const animalOrder = "cetacean";
 const animalClass = "mammal";
@@ -292,3 +292,53 @@ const hasEmpathy = true;
 if (animalOrder === "cetacean" && animalClass === "mammal" && hasEmpathy) {
   console.log("It's a dolphin!");
 }
+
+const yourNumber = "D135";
+let windowNumber;
+
+switch (yourNumber) {
+  case "D133":
+    windowNumber = 1;
+    break;
+  case "D134":
+    windowNumber = 2;
+    break;
+  case "D135":
+    windowNumber = 3;
+    break;
+  case "D136":
+    windowNumber = 4;
+    break;
+  case "D137":
+    windowNumber = 5;
+}
+
+console.log(windowNumber);
+
+let catName;
+const cartoon = "Shrek";
+
+switch (cartoon) {
+  case "Shrek":
+  case "Shrek 2":
+  case "Shrek the Third":
+    catName = "Puss in Boots";
+    break;
+  case "Garfield and Friends":
+    catName = "Garfield";
+}
+
+console.log(catName);
+
+let catName1;
+const cartoon1 = "Garfield and Friends";
+
+switch (cartoon1) {
+  case "Shrek 2":
+    catName1 = "Puss in Boots";
+    break;
+  default:
+    catName1 = "Garfield";
+}
+
+console.log(catName1);
