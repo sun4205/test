@@ -194,9 +194,9 @@ if (message.includes("ex")) {
 console.log("Turn Caps Lock on".toLowerCase());
 console.log("Turn Caps Lock off".toUpperCase());
 
-const firstStr = "This verification won't work"; 
+const firstStr = "This verification won't work";
 const secondStr = "thIS vEriFicaTIon won't work";
-console.log(firstStr === secondStr); 
+console.log(firstStr === secondStr);
 console.log(firstStr.toLowerCase() === secondStr.toLowerCase());
 
 console.log("I came. I saw. I conquered.".split(" "));
@@ -216,8 +216,8 @@ console.log(elementsArray);
 console.log(Math.floor(9.99));
 console.log(Math.ceil(9.01));
 console.log(Math.round(9.51));
-console.log(Math.max(1,2,3,4,5));
-console.log(Math.min(1,2,3,4,5));
+console.log(Math.max(1, 2, 3, 4, 5));
+console.log(Math.min(1, 2, 3, 4, 5));
 console.log(Math.random());
 
 let overtime = "17 hours, 59 minutes, and 59 seconds";
@@ -225,4 +225,70 @@ let overtime = "17 hours, 59 minutes, and 59 seconds";
 console.log(parseInt(overtime));
 console.log(parseInt("99 Red Balloons"));
 console.log(parseInt("Catch 22"));
-console.log(parseFloat('98.6'));
+console.log(parseFloat("98.6"));
+
+let pw = "JavaScript";
+
+function checkPassword(pass) {
+  if (pass !== pw) {
+    console.log("Wrong password");
+    return;
+  }
+
+  console.log("Correct password");
+}
+
+checkPassword("java script");
+checkPassword("JavaScript");
+
+let pw1 = prompt("Password:");
+
+if (!pw1) {
+  pw1 = prompt("Password is required. It mustn't be empty.");
+}
+
+const answer = "To be" || "Not to be";
+console.log(answer);
+
+function checkTheCar(distance, model, damaged, price) {
+  const canBuy =
+    distance <= 100000 &&
+    (model === "Ford" || model === "Chevrolet") &&
+    !damaged &&
+    price <= 10000;
+  return canBuy;
+}
+
+checkTheCar(50000, "Chevrolet", false, 7000);
+
+let myFutureGarage = [];
+
+function addToMyGarage(carDistance, carModel, carDamaged, carPrice) {
+  const car = {
+    distance: carDistance,
+    model: carModel,
+    damaged: carDamaged,
+    price: carPrice,
+  };
+
+  myFutureGarage.push(car);
+}
+
+checkTheCar(120000, "Tesla", true, 30000) &&
+  addToMyGarage(120000, "Tesla", true, 30000);
+
+checkTheCar(50000, "Chevrolet", false, 7000) &&
+  addToMyGarage(50000, "Chevrolet", false, 7000);
+
+const t = prompt("What is your temperature?");
+const normal = t >= 96.6 && t <= 98.9;
+
+console.log(normal);
+
+const animalOrder = "cetacean";
+const animalClass = "mammal";
+const hasEmpathy = true;
+
+if (animalOrder === "cetacean" && animalClass === "mammal" && hasEmpathy) {
+  console.log("It's a dolphin!");
+}
