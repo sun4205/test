@@ -150,3 +150,227 @@ windowNumber = windows[yourNumber] || 0;
 
 console.log(windowNumber); 
 
+const heights = {
+    burjKhalifa: 828,
+    tokyoSkyTree: 634,
+    shanghaiTower: 632,
+    abrajAlBait: 601,
+    cantonTower: 600,
+    pingAnFinanceCentre: 600,
+    lotteWorldTower: 555,
+    cnTower: 553,
+    oneWorldTradeCenter: 541,
+    ostankinoTower: 540
+  };
+  
+  const stratosphere = 11000;
+  
+  const sumHeights = Object.values(heights).reduce(function(result,current){return result + current},0);
+  
+  console.log(sumHeights >= stratosphere);
+
+  const tion = {
+    fruition: "the realization or fulfilment of a plan or project",
+    depreciation: "the process of losing value",
+      microseismicity: "a faint earth tremor caused by natural phenomena",
+    alienation: "a conveyance of property",
+    bifurcation: "the point or area at which something divides into two branches or parts",
+    locomotion: "the ability to move",
+    fusion: "a union by or as if by melting",
+  };
+  
+  Object.keys(tion).forEach(function (key) {
+    if (!key.endsWith("tion")) {
+      delete tion[key];
+    }
+  });
+
+    
+  console.log(tion);
+
+  function swap(obj) {
+    const res = {};
+    // swap keys with values and add them to the res object
+  
+    return res;
+  }
+  
+  const myObj = {
+    first: 1,
+    second: 2,
+    third: 3
+  };
+  
+  function swap(obj) {
+      const res = {};
+  
+      Object.keys(obj).forEach(function (key) {
+          res[obj[key]] = key;
+      });
+  
+      return res;
+  }
+  
+  
+  console.log(myObj); 
+  console.log(swap(myObj)); 
+
+  function copy(obj) {
+    const res = {};
+    Object.keys(obj).forEach(function (key){
+      res[key] = obj[key];
+    });
+    return res;
+  }
+    
+  const firstObj = {
+      one: 1,
+      two: 2,
+      three: 3
+  };
+  
+  const secondObj = firstObj;
+  const thirdObj = copy(firstObj);
+  
+  console.log(firstObj);
+  console.log(secondObj);
+  console.log(thirdObj); 
+  
+  firstObj.four = 4;
+  
+  console.log(firstObj);
+  console.log(secondObj); 
+  
+ 
+  console.log(thirdObj); 
+
+  function compare(firstObj, secondObj) {
+	return firstObj === secondObj;
+}
+
+const first = {
+  property: "value"
+};
+
+const second = {
+  property: "value"
+};
+
+const third = second;
+
+console.log(compare(first, second)); 
+console.log(compare(second, third)); 
+
+function isEqual(firstObj, secondObj) {
+	const firstKey = Object.keys(firstObj);
+    const secondKey = Object.keys(secondObj);
+  if(firstKey.length !== secondKey.length){
+    return false;
+  }
+  return firstKey.every(function(key){
+    return firstObj[key]===secondObj[key];
+  })
+}
+
+const first1 = {
+  property: "value",
+  anotherProperty: "another value"
+};
+
+const second1 = {
+  property: "value",
+  anotherProperty: "another value"
+};
+
+const third1 = {
+  property: "value",
+  anotherProperty: "yet another value"
+};
+
+isEqual(first1, second1); 
+isEqual(second, third1); 
+
+function shallowCopy(obj) {
+	return Object.assign({},obj);
+}
+
+const myObj1 = {
+	one: 1,
+	two: 2,
+	three: 3
+};
+
+const myObjCopy = shallowCopy(myObj1);
+
+console.log(myObjCopy === myObj1); 
+
+// modify this function
+function evolution(obj, key, value) {
+    const newObject = Object.assign({},obj);
+    newObject[key] = value;
+    return newObject;
+  }
+  
+  const fish = {
+    eggs: "roe",
+    eyes: 2,
+    habitat: "water"
+  };
+  
+  const frog = evolution(fish, "legs", 4);
+  
+  console.log("frog: ", frog);    
+  
+  console.log("fish: ", fish);
+
+  const aladdinSane = {
+    artist: "David Bowie",
+    album: "Aladdin Sane",
+    year: 1973,
+    tracks: {
+      "Watch That Man": "4:30",
+      "Aladdin Sane": "5:06",
+      "Drive-In Saturday": "4:33",
+      "Panic in Detroit": "4:25",
+      "Cracked Actor": "3:01",
+      "Time": "5:15",
+      "The Prettiest Star": "3:31",
+      "Let's Spend the Night Together": "3:10",
+      "The Jean Genie": "4:07",
+      "Lady Grinning Soul": "3:54"
+    }
+  };
+  
+  const aladdinSaneCopy = Object.assign({},aladdinSane, {
+     tracks: Object.assign({}, aladdinSane.tracks)
+  })
+  
+  console.log(aladdinSane.tracks === aladdinSaneCopy.tracks); 
+
+  function double(value) {
+    if (Array.isArray(value)) {
+      return value.map(function (num) {
+        return num * 2;
+      });
+    }
+  
+    return value * 2;
+  }
+  
+  double(2); 
+  double([1, 2, 3]); 
+  
+  
+
+  
+  
+ 
+  
+
+
+
+
+  
+  
+  
+
