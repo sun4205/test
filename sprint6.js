@@ -449,3 +449,25 @@ function callback(evt) {
 checkbox1.addEventListener("input", callback);
 
 checkbox1.addEventListener("change", callback);
+
+const form3 = document.forms.myForm;
+
+form.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+
+  form3.reset();
+});
+
+const form4 = document.forms.myForm;
+const input2 = form4.elements.myInput;
+
+form4.addEventListener("input", function (evt) {
+  
+  if (input2.length === 4) {
+   form4.submit();
+  }
+});
+
+form4.addEventListener("submit", function (evt) {
+  
+});
