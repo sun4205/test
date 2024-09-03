@@ -462,12 +462,69 @@ const form4 = document.forms.myForm;
 const input2 = form4.elements.myInput;
 
 form4.addEventListener("input", function (evt) {
-  
   if (input2.length === 4) {
-   form4.submit();
+    form4.submit();
   }
 });
 
-form4.addEventListener("submit", function (evt) {
-  
+form4.addEventListener("submit", function (evt) {});
+
+// const formElement = document.querySelector(".form");
+// const formInput = formElement.querySelector(".form__input");
+
+// formElement.addEventListener("submit", function (evt) {
+//   evt.preventDefault();
+// });
+
+formInput.addEventListener("input", function (evt) {
+  console.log(evt.target.validity.valid);
 });
+
+const formElement = document.querySelector(".form");
+const formInput = formElement.querySelector(".form__input");
+
+const showInputError = (element) => {
+  element.classList.add("form__input_type_error");
+};
+
+const hideInputError = (element) => {
+  element.classList.remove("form__input_type_error");
+};
+
+const checkInputValidity = () => {
+  if (!formInput.validity.valid) {
+    showInputError(formInput);
+  } else {
+    hideInputError(formInput);
+  }
+};
+
+formElement.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+});
+
+formInput.addEventListener("input", checkInputValidity);
+
+const setEventListeners = (formElement) => {
+  const inputList = Array.from(formElement.querySelectorAll(".form__input"));
+
+  inputList.forEach((inputElement) => {
+    inputElement.addEventListener("input", () => {
+      checkInputValidity(formElement, inputElement);
+    });
+  });
+};
+
+const enableValidation = () => {
+  const formList = Array.from(document.querySelectorAll(".form"));
+
+  formList.forEach((formElement) => {
+    formElement.addEventListener("submit", (evt) => {
+      evt.preventDefault();
+    });
+
+    setEventListeners(formElement);
+  });
+};
+
+enableValidation();
