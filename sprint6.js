@@ -528,3 +528,31 @@ const enableValidation = () => {
 };
 
 enableValidation();
+
+const hasInvalidInput = (inputList) => {
+  
+  return inputList.some((inputElement) => {
+       
+    return !inputElement.validity.valid;
+  })
+};
+
+const toggleButtonState = (inputList, buttonElement) => {
+ 
+  if (hasInvalidInput(inputList)) {
+    
+    buttonElement.classList.add("form__submit_inactive");
+  } else {
+       
+    buttonElement.classList.remove("form__submit_inactive");
+  }
+};
+
+// const setEventListeners = (formElement) => {
+//   const inputList = Array.from(formElement.querySelectorAll(".form__input"));
+//   const buttonElement = formElement.querySelector(".form__submit");
+
+//   toggleButtonState(inputList, buttonElement);
+
+  
+// };
