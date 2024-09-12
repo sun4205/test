@@ -73,4 +73,67 @@ function like() {
 const songex = createSongs("Mac Miller", "Circles", 2020);
 console.log(songex.getSongInfo());
 
+class SimpleClass {
+    simpleMethod(){
+        console.log("so simple");
+    }
+}
+
+const instance = new SimpleClass();
+instance.simpleMethod();
+
+ 
+
+class PodcastEpisode {
+    constructor(title,artist,guest,duration){
+      this.title = title,
+      this.artist = artist,
+      this.guest = guest,
+      this.duration = duration,
+      this.isLiked = false
+    }
+    like(){
+      this.isLiked = !this.isLiked;
+    }
+  
+    getEpisodeInfo(){
+    return `${this.artist} "${this.title}" - ${this.guest} (${this.getFormattedDuration()} seconds`;
+  }
+    getFormattedDuration() {
+      const minutes = Math.floor(this.duration / 60); 
+      const seconds = this.duration % 60; 
+      return `${minutes}:${seconds > 9 ?  seconds : "0" + seconds}`; 
+  }
+    
+  }
+
+  class Car {
+    constructor(maxGasTankValue, fuelConsumption) {
+      this._gasTankValue = 0;
+      this._maxGasTankValue = maxGasTankValue;
+      this._fuelConsumption = fuelConsumption; // miles per gallon
+    }
+  
+    _getAvailableGasValue(gasValue) {
+      if (gasValue < 0) return 0;
+      if (gasValue > this._maxGasTankValue) return this._maxGasTankValue;
+      return gasValue;
+    }
+      
+    refuel(gasValue) {
+      this._gasTankValue = this._getAvailableGasValue(gasValue);
+    }
+      
+    getDistance() {
+      return this._gasTankValue / this._fuelConsumption * 100;
+    }
+  }
+  
+  const car = new Car(70, 9);
+  car.refuel(45);
+  
+  console.log(car._gasTankValue); 
+  console.log(car.getDistance()); 
+  
+
  
