@@ -135,5 +135,45 @@ class PodcastEpisode {
   console.log(car._gasTankValue); 
   console.log(car.getDistance()); 
   
+  class Student {
+    constructor(name, group) {
+      this._name = name;
+      this._group = group;
+      this._profession = null;
+      this._trainingDuration = null;
+    }
+  
+    getInfo() {
+      return {
+        name: this._name,
+        group: this._group,
+        profession: this._profession,
+        trainingDuration: this._trainingDuration
+      }
+    }
+  }
+  class WebDeveloperStudent extends Student {
+    constructor(name, group) {
+      super(name, group);
+      this._profession = "Web developer";
+      this._trainingDuration = 10;
+    }
+  } 
+  
+  class PythonDeveloperStudent extends Student {
+    constructor(name, group) {
+      super(name, group);
+      this._profession = "Python developer";
+      this._trainingDuration = 9;
+    }
+  }
+  
+  class DataAnalystStudent extends Student {
+    constructor(name, group) {
+      super(name, group);
+      this._profession = "Data analyst";
+      this._trainingDuration = 6;
+    }
+  }
 
  
