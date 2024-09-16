@@ -175,5 +175,55 @@ class PodcastEpisode {
       this._trainingDuration = 6;
     }
   }
-
+  class Appliance {
+    constructor(name) {
+      this._name = name;
+      this._isOn = false;
+    }
+  
+    turnOn() {
+      this._isOn = true;
+      console.log(`${this._name} is now on`);
+    }
+  
+    turnOff() {
+      this._isOn = false;
+      console.log(`${this._name} is now off`);
+    }
+  
+    getInfo() {
+      return {
+        name: this._name,
+        isOn: this._isOn,
+      }
+    }
+  }
+  
+  const appliance = new Appliance('arbitrary appliance');
+  
+  class Toaster extends Appliance {
+    constructor(name, slices) {
+      super(name);
+      this._name = name;
+      this._slices = slices;
+      this._howToasty = 1;
+    }
+  
+    turnOn() {
+      super.turnOn()
+      console.log(`Toastiness is set to ${this._howToasty}`);
+   }
+  
+    adjustToastiness(number) {
+      this._howToasty = number;
+    }
+  
+    getInfo() {
+      return {
+        ...super.getInfo(),
+      }
+    }
+  }
+  
+  const toaster = new Toaster('Toaster', 2);
  
