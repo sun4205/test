@@ -227,3 +227,46 @@ class PodcastEpisode {
   
   const toaster = new Toaster('Toaster', 2);
  
+  const messageList = [
+    {
+      image: "https://code.s3.yandex.net/web-code/card__image.jpg",
+      text: "Hi, we need to tune up our chat ASAP!"
+    },
+    {
+      image: "https://code.s3.yandex.net/web-code/card__image-lake.jpg",
+      text: "We can now create any number of cards!"
+    },
+  ];
+  
+  class Card {
+    constructor(text, image) {
+      this._text = text;
+      this._image = image;
+    }
+    
+    _getTemplate() {
+      const cardElement = document
+        .querySelector(".card-template")
+        .content
+        .querySelector(".card")
+        .cloneNode(true);
+      
+      return cardElement;
+    }
+  
+    generateCard() {
+      this._element = this._getTemplate();
+  
+      this._element.querySelector(".card__avatar").src = this._image;
+      this._element.querySelector(".card__paragraph").textContent = this._text;
+  
+      return this._element;
+    }
+  }
+  
+  messageList.forEach((item) => {
+    const card = new Card(item.text, item.image);
+    const cardElement = card.generateCard();
+  
+    document.body.append(cardElement);
+  });
