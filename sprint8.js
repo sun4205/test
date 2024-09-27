@@ -21,3 +21,57 @@ const user = {
 const { name, avatar = "placeholder-avatar.png" } = user;
 
 console.log(avatar);
+
+const precipitation = ["rain", "sleet", "snow"];
+const [liquid, freezing, frozen] = precipitation;
+
+console.log(liquid, freezing, frozen);
+
+const precipitation1 = ["rain", "sleet", "snow"];
+
+const [, , frozen1] = precipitation1;
+
+console.log(frozen1);
+
+const userData = {
+  firstName: "William",
+  lastName: "Webberton",
+  age: 55,
+};
+
+const printUserParams = ({ firstName, lastName, age }, secondParameter) => {
+  console.log(firstName);
+  console.log(lastName);
+  console.log(age);
+
+  console.log(secondParameter);
+};
+
+printUserParams(userData, "second parameter");
+
+class Card {
+  constructor({ text, image, description }) {
+    this._text = text;
+    this._image = image;
+    this._description = description;
+  }
+}
+
+const countUserPosts = ({ posts }) => {
+  return posts.length;
+};
+
+const user1 = {
+  id: 2294611830,
+  username: "leonardo.dv",
+  posts: [
+    { comment: "The Vitruvian Man", dateCreated: 1490 },
+    { comment: "Portrait of a Musician", dateCreated: 1490 },
+    {
+      comment: "The portrait of a man in red chalk #selfie",
+      dateCreated: 1512,
+    },
+  ],
+};
+
+countUserPosts(user1);
