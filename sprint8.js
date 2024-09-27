@@ -75,3 +75,24 @@ const user1 = {
 };
 
 countUserPosts(user1);
+
+class Section {
+  constructor({ data }, containerSelector) {
+    this._initialArray = data;
+    this._container = document.querySelector(containerSelector);
+  }
+
+  renderItems() {
+    this._initialArray.forEach((item) => {
+      const card = item.isOwner
+        ? new UserCard(item, ".card-template_type_user")
+        : new DefaultCard(item, ".card-template_type_default");
+
+      const cardElement = card.generateCard();
+    });
+  }
+
+  setItem(element) {
+    this._container.append(element);
+  }
+}
