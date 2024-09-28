@@ -96,3 +96,65 @@ class Section {
     this._container.append(element);
   }
 }
+
+export default class FilterButton {
+  constructor({ data } , buttonSelector) {
+    this._additionalButtonClass = data.buttonClass;
+    this._buttonSelector = buttonSelector;
+  }
+
+  _getTemplate() {
+    const buttonElement = document
+      .querySelector(this._buttonSelector)
+      .content
+      .querySelector(".filter__button")
+      .cloneNode(true);
+
+    return buttonElement;
+  }
+
+  generateButton() {
+    this._element = this._getTemplate();
+    this._element.classList.add(this._additionalButtonClass);
+
+    return this._element;
+  }
+}
+
+const defaultCardList = new Section({
+  data: items,
+  renderer: (item) => {
+    const card = new DefaultCard(item, ".default-card");
+    const cardElement = card.generateCard();
+    defaultCardList.setItem(cardElement);
+  }
+}, cardListSelector);
+
+const horizontalCardList = new Section({
+  data: items,
+  renderer: (item) => {
+    const card = new HorizontalCard(item, ".horizontal-card");
+    const cardElement = card.generateCard();
+    horizontalCardList.setItem(cardElement);
+  }
+}, cardListSelector);
+
+const filterList = new Section({
+  data: filterButtons,
+  renderer: () => {
+
+  }
+}, filterListSelector);
+
+defaultCardButton.addEventListener("click", () => {
+  defaultCardList.renderItems();
+});
+
+horizontalCardButton.addEventListener("click", () => {
+  horizontalCardList.renderItems();
+});
+
+defaultCardList.renderItems();
+
+
+
