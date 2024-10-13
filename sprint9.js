@@ -55,4 +55,14 @@ const user = {
   console.log(user.dog === userDeepCopy.dog); 
   console.log(user.name === userDeepCopy.name); 
   console.log(user.dog.name === userDeepCopy.dog.name); 
+
+  fetch("https://example.com", {
+    method:"POST",
+    body:JASON.stringify({
+        name:"paul",
+        age:30
+    })
+  })
+
+  
   
