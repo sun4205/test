@@ -161,3 +161,35 @@ function consoleDate() {
     console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
   }
   setInterval(consoleDate,1000);
+
+  const obj1 = {
+    messageSpanish: "¡Hola Mundo!"
+  };
+  
+  const obj2 = {
+    messageEng: 'Hello, World!'
+  };
+  
+  obj2.__proto__ = obj1;
+  
+  console.log(obj2.messageEng); 
+  console.log(obj2.messageSpanish);
+
+  const obj3 = {
+    messageSpanish: "¡Hola Mundo!"
+  };
+  
+  const obj4 = {
+    messageEng: "Hello, World!"
+  };
+  
+  const obj5 = {
+    messageFrench: "Bonjour le Monde!"
+  };
+  
+  obj4.__proto__ = obj3;
+  obj5.__proto__ = obj4;
+  
+  console.log(obj5.messageFrench); 
+  console.log(obj5.messageEng); 
+  console.log(obj5.messageSpanish);
