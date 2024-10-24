@@ -1,166 +1,151 @@
-fetch("https://example.com/users", {
-  method: "post",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({
-    username: "authur",
-  }),
-});
+// fetch("https://example.com/users", {
+//   method: "post",
+//   headers: {
+//     "Content-Type": "application/json",
+//   },
+//   body: JSON.stringify({
+//     username: "authur",
+//   }),
+// });
 
-fetch("https://example.com")
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => {
-    console.error("Error. The request failed");
-  });
+// fetch("https://example.com")
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error("Error. The request failed");
+//   });
 
-const songs = [
-  {
-    title: "ALOHAnet",
-    artist: "Palmbomen II",
-  },
-  {
-    title: "The Other Stranger",
-    artist: "Doxa Sinistra",
-  },
-  {
-    title: "Ariadna",
-    artist: "Kedr Livansky",
-  },
-];
+// const songs = [
+//   {
+//     title: "ALOHAnet",
+//     artist: "Palmbomen II",
+//   },
+//   {
+//     title: "The Other Stranger",
+//     artist: "Doxa Sinistra",
+//   },
+//   {
+//     title: "Ariadna",
+//     artist: "Kedr Livansky",
+//   },
+// ];
 
-const songJson = JASON.stringify(songs);
-console.log(songJson);
+// const songJson = JASON.stringify(songs);
+// console.log(songJson);
 
-const songsObject = JSON.parse(songsJSON);
+// const songsObject = JSON.parse(songsJSON);
 
-console.log(typeof songsObject);
-console.log(songsObject[0].title);
-const user = {
-  name: "Paul",
-  age: 30,
-  hasDog: true,
-  dog: {
-    name: "Doge",
-    age: 6,
-  },
-};
+// console.log(typeof songsObject);
+// console.log(songsObject[0].title);
 
-const userDeepCopy = JSON.parse(JSON.stringify(user));
 
-console.log(user === userDeepCopy);
-console.log(user.dog === userDeepCopy.dog);
-console.log(user.name === userDeepCopy.name);
-console.log(user.dog.name === userDeepCopy.dog.name);
+// fetch("https://example.com", {
+//   method: "POST",
+//   body: JASON.stringify({
+//     name: "paul",
+//     age: 30,
+//   }),
+// });
 
-fetch("https://example.com", {
-  method: "POST",
-  body: JASON.stringify({
-    name: "paul",
-    age: 30,
-  }),
-});
-
-function createPostMarkup(post) {
-  return;
-  `<div class="post>
-    <p class="header__title>${post.title}</p>
-    <p class="header__text>${post.body}</>
+// function createPostMarkup(post) {
+//   return;
+//   `<div class="post>
+//     <p class="header__title>${post.title}</p>
+//     <p class="header__text>${post.body}</>
     
-    `;
-}
+//     `;
+// }
 
-function addPostToDom(container, markup) {
-  container.addAdjacentHTML("afterbegin", markup);
-}
+// function addPostToDom(container, markup) {
+//   container.addAdjacentHTML("afterbegin", markup);
+// }
 
-function getPosts() {
-  return fetch("https://jsonplaceholder.typicode.com/posts")
-    .then((res) => res.json())
-    .then((posts) => {
-      posts.forEach((post) => {
-        addPostToDom(
-          document.querySelector(".container"),
-          createPostMarkup(post)
-        );
-      });
-    });
-}
+// function getPosts() {
+//   return fetch("https://jsonplaceholder.typicode.com/posts")
+//     .then((res) => res.json())
+//     .then((posts) => {
+//       posts.forEach((post) => {
+//         addPostToDom(
+//           document.querySelector(".container"),
+//           createPostMarkup(post)
+//         );
+//       });
+//     });
+// }
 
-getPosts();
+// getPosts();
 
-const quoteElement = document.querySelector("div.quote");
+// const quoteElement = document.querySelector("div.quote");
 
-fetch("https://se-quotes-api.onrender.com/v1/quotes/random")
-  .then((res) => {
-    if (res.ok) {
-      return res.json();
-    }
+// fetch("https://se-quotes-api.onrender.com/v1/quotes/random")
+//   .then((res) => {
+//     if (res.ok) {
+//       return res.json();
+//     }
 
-    return Promise.reject(`Something went wrong: ${res.status}`);
-  })
-  .then((data) => {
-    quoteElement.textContent = data.quote;
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+//     return Promise.reject(`Something went wrong: ${res.status}`);
+//   })
+//   .then((data) => {
+//     quoteElement.textContent = data.quote;
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
 
-function createTweet(tweet) {
-  const newTweetContainer = document.createElement("div");
-  newTweetContainer.textContent = tweet;
-  document.body.append(newTweetContainer);
-}
+// function createTweet(tweet) {
+//   const newTweetContainer = document.createElement("div");
+//   newTweetContainer.textContent = tweet;
+//   document.body.append(newTweetContainer);
+// }
 
-function insertTweet(tweet, containerSelector, callback) {
-  const tweetContainer = document.querySelector(containerSelector);
+// function insertTweet(tweet, containerSelector, callback) {
+//   const tweetContainer = document.querySelector(containerSelector);
 
-  if (!tweetContainer) {
-    callback(tweet);
-    return;
-  }
+//   if (!tweetContainer) {
+//     callback(tweet);
+//     return;
+//   }
 
-  tweetContainer.textContent = tweet;
-}
+//   tweetContainer.textContent = tweet;
+// }
 
-insertTweet("a reply to Marissa Mayer's tweet", ".tweets", createTweet);
+// insertTweet("a reply to Marissa Mayer's tweet", ".tweets", createTweet);
 
-const tweets = [
-  "some weird thread",
-  "a reply to a tech influencer's tweet",
-  "reaction to breaking news",
-];
+// const tweets = [
+//   "some weird thread",
+//   "a reply to a tech influencer's tweet",
+//   "reaction to breaking news",
+// ];
 
-function forEach(arr, callback) {
-  for (let i = 0; i < arr.length; i++) {
-    callback(arr[i]);
-  }
-}
+// function forEach(arr, callback) {
+//   for (let i = 0; i < arr.length; i++) {
+//     callback(arr[i]);
+//   }
+// }
 
-forEach(tweets, function (tweet) {
-  console.log(tweet);
-});
+// forEach(tweets, function (tweet) {
+//   console.log(tweet);
+// });
 
-function imageLoadCallback(evt) {
-  document.body.append(evt.target);
-}
+// function imageLoadCallback(evt) {
+//   document.body.append(evt.target);
+// }
 
-function loadImage(imageUrl, loadCallback) {
-  const img = document.createElement("img");
-  img.src = imageUrl;
+// function loadImage(imageUrl, loadCallback) {
+//   const img = document.createElement("img");
+//   img.src = imageUrl;
 
-  img.onload = loadCallback;
-}
+//   img.onload = loadCallback;
+// }
 
-loadImage("https://yastatic.net/q/logoaas/v1/Practicum.svg", imageLoadCallback);
+// loadImage("https://yastatic.net/q/logoaas/v1/Practicum.svg", imageLoadCallback);
 
-function consoleDate() {
-    const date = new Date();
-    console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
-  }
-  setInterval(consoleDate,1000);
+// function consoleDate() {
+//     const date = new Date();
+//     console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);
+//   }
+//   setInterval(consoleDate,1000);
 
   const obj1 = {
     messageSpanish: "¡Hola Mundo!"
@@ -193,3 +178,43 @@ function consoleDate() {
   console.log(obj5.messageFrench); 
   console.log(obj5.messageEng); 
   console.log(obj5.messageSpanish);
+
+  const songPrototype = {
+    like: function () {
+      this.isLiked = !this.isLiked;
+    }
+  };
+  
+  function createSong(title, artist) {
+    
+    const newSong = Object.create(songPrototype);
+  
+    
+    newSong.title = title;
+    newSong.artist = artist;
+    newSong.isLiked = false;
+  
+    
+    return newSong;
+  }
+  
+  const song1 = createSong("Chanel", "Frank Ocean");
+  const song2 = createSong("Circles", "Mac Miller");
+  const song3 = createSong("Until I Walk Through the Flames", "Wicca Phase Springs Eternal");
+  
+  console.log(song1); 
+  console.log(song2); 
+  console.log(song1.like === song2.like)
+
+  const objPrototype = {
+    foo: function() {
+      console.log("foo");
+    }
+  };
+  
+  const obj = Object.create(objPrototype);
+  
+  obj.bar = "bar";
+  
+  console.log(obj); 
+  console.log(obj.__proto__); 
