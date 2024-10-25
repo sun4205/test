@@ -218,3 +218,21 @@
   
   console.log(obj); 
   console.log(obj.__proto__); 
+
+  function Tweet(text, user) {
+    this.text = text;
+    this.user = user;
+  }
+  
+  Tweet.prototype.post = function(){
+    console.log(this.text);
+  console.log(this.user);
+  }
+  
+  const tweet1 = new Tweet(
+    "Change starts with us as individuals. If one individual becomes more compassionate it will influence others and so we will change the world.",
+    "Dalai Lama"
+  );
+  
+  tweet1.post();
+  
