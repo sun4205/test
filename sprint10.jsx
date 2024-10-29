@@ -87,3 +87,24 @@ function handleKeyUp(e) {
     onMouseUp = {handleMouseUp}>🤪</button>
     </div>
   ), document.querySelector('#root'));
+
+  function Animal(props){
+    return(
+        <div className="animal">
+      <div className="icon">{props.icon}</div>
+      <div className="info">
+        <h3>{props.name}</h3>
+        <span>{props.height}</span>
+      </div>
+    </div>
+    );
+  }
+
+  reactDom.render(
+    <>
+    <h2>Africa</h2>
+    <Animal name="Giraffe" icon="🦒" height="17 feet"/>
+    <Animal name="Hedgehog" icon="🦔" height="6 inches" />
+    <Animal name="Skunk" icon="🦨" height="7 inches" />
+    </>,document.querySelector("#root")
+  );
