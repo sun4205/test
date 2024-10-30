@@ -189,3 +189,87 @@ function handleKeyUp(e) {
   ReactDOM.render((
     <goodDeeds />
   ),document.querySelector('#root'));
+
+  function toggleBackground(shouldShow) {
+    document.body.classList.toggle('with-bg', shouldShow);
+  }
+  
+  function Beautifier() {
+    const [isBeautiful, setIsBeautiful] = React.useState(false);
+  
+    React.useEffect(()=>{
+      toggleBackground(isBeautiful);
+    }
+     
+    );
+  
+    function handleChange() {
+      setIsBeautiful(!isBeautiful);
+    }
+  
+    return (
+      <label>
+        <input type="checkbox" onChange={handleChange} />
+        — Enable beautiful background
+      </label>
+    );
+  }
+  
+  ReactDOM.render((
+    <Beautifier />
+  ), document.querySelector('#root'));
+
+  function App() {
+    const [isCustomCursor, setIsCustomCursor] = React.useState();
+  
+    function handleChange() {
+      setIsCustomCursor(!isCustomCursor);
+    }
+  
+    return (
+      <>
+        <label>
+          <input type="checkbox" onChange={handleChange}/>
+          — Enable neon cursor
+        </label>
+        {isCustomCursor && <NeonCursor/>}
+      </>
+    );
+  }
+  
+  function NeonCursor() {
+    const [position, setPosition] = React.useState({ top: 0, left: 0 });
+  
+    React.useEffect(() => {
+      document.addEventListener('mousemove', handleMouseMove);
+      document.documentElement.classList.add('no-cursor');
+  
+      return () => {
+        document.documentElement.classList.remove('no-cursor');
+        document.removeEventListener('mousemove', handleMouseMove);
+      };
+    });
+  
+    function handleMouseMove(e) {
+      setPosition({
+        top: e.pageY,
+        left: e.pageX,
+      });
+    }
+  
+    return (
+      <img
+        src="https://practicum-content.s3.us-west-1.amazonaws.com/web-code/react/moved_cursor.svg"
+        width={30}
+        style={{
+          position: 'absolute',
+          top: position.top,
+          left: position.left,
+          pointerEvents: 'none',
+        }}
+      />
+    );
+  }
+  
+  ReactDOM.render(<App/>, document.querySelector('#root'));
+  
