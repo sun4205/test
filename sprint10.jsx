@@ -1,3 +1,5 @@
+const { func } = require("prop-types");
+
 reactDom.render((
     <h2>
         Can I stay here?
@@ -142,4 +144,48 @@ function handleKeyUp(e) {
       <Switch title="Taco" color="green" isActive={false} />
     </>
   ), document.querySelector('#root'));
+
+  function Switch(props){
+    const [isActive, SetIsActive] = React.useState(false);
+    function handleClick(){
+        SetIsActive(!isActive);
+    }
+    const className = `switch ${props.color} ${isActive ?'on' :'off'}`;
+
+    return (
+        <div className = {className}>
+            <button className = 'img' onClick = {handleClick} />
+            <h2>{props.title}</h2>
+        </div>
+    );
+  }
+
+  reactDom.render((
+    <Switch title='Happy' color='blue' isActive = {false} />
+  ),document.querySelector('#root'));
   
+  function goodDeeds(){
+    const [deeds,setDeeds] = React.useState([]);
+
+    function handleAddTask(e){
+        setDeeds([...deeds,input.value]);
+        input.value = '';
+    }
+
+    return(
+        <>
+        <h3>My Good Deeds</h3>
+        <input type= 'text' />
+        <button onclick ={handleAddTask} >+</button>
+        <ul>
+        {deeds.map((deed, i) => (
+          <li key={i}>{deed}</li>
+        ))}
+        </ul>
+        </>
+    );
+  }
+
+  ReactDOM.render((
+    <goodDeeds />
+  ),document.querySelector('#root'));
