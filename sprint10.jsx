@@ -273,3 +273,18 @@ function handleKeyUp(e) {
   
   ReactDOM.render(<App/>, document.querySelector('#root'));
   
+  function Animal(type, phrase) {
+    this.type = type;
+    this.phrase = phrase;
+  }
+
+Animal.prototype.say = function() {
+  console.log(`The ${this.type} goes ${this.phrase} sound here`);
+}
+  
+  
+  const fox = new Animal('fox', 'woopwoopwoop');
+  const tRex = new Animal('T-rex', 'RAWR');
+  
+  fox.say(); 
+  tRex.say(); 
