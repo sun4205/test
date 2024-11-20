@@ -51,3 +51,16 @@ function App() {
     </TranslationContext.Provider>
   );
 }
+
+const [weatherData, setWeatherData] = useState({
+  type: "",
+  temp: { F: 99 },
+  city: "",
+});
+const [activeModal, setActiveModal] = useState("");
+const [clothingItems, setClothingItems] = useState([]);
+const [selectedCard, setSelectedCard] = useState({});
+const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+const [deleteConfirmation, setDeleteConfirmation] = useState(false);
+const [isRemoveItemModalOpen, setIsRemoveItemModalOpen] = useState(false);
+const [isLoading, setIsLoading] = React.useState(false);
