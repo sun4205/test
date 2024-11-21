@@ -64,3 +64,9 @@ const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 const [deleteConfirmation, setDeleteConfirmation] = useState(false);
 const [isRemoveItemModalOpen, setIsRemoveItemModalOpen] = useState(false);
 const [isLoading, setIsLoading] = React.useState(false);
+
+const openRemoveItemModal = (card) => {
+  setSelectedCard(card);
+  setIsRemoveItemModalOpen(true);
+};
+const closeRemoveItemModal = () => setIsRemoveItemModalOpen(false);
