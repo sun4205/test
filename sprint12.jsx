@@ -15,8 +15,8 @@ const http = require("http");
 // });
 // server.listen(3000);
 
-const http = require('http');
-const {PORT = 3000} = process.env;
+// const http = require('http');
+// const {PORT = 3000} = process.env;
 
 
 const markup = `
@@ -56,14 +56,31 @@ const markup = `
   </html>
 `;
 
-const server = http.createServer((req,res)=>{
-  res.writeHead(200, {
-        'Content-Type': 'text/html'
-    });
-  res.end(markup);
+// const server = http.createServer((req,res)=>{
+//   res.writeHead(200, {
+//         'Content-Type': 'text/html'
+//     });
+//   res.end(markup);
   
-});
-server.listen(PORT);
+// });
+// server.listen(PORT);
+
+//exporting moduls
+const someFunction = () => {
+  console.log('I was exported!');
+};
+
+const someValue = 42;
+
+module.exports = {
+  someFunction,
+  someValue
+};
+
+//importing
+const { someFunction, someValue } = require('./utils');
+
+
 
 
 
