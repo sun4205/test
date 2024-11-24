@@ -112,6 +112,22 @@ fs.unlink('data.json', (err) => {
   console.log('The file was deleted!'); 
 });
 
+//working with streams
+const reader = fs.createReadStream('./in.txt', { encoding: 'utf8' });
+const writer = fs.createWriteStream('./out.txt', { encoding: 'utf8' });
+
+reader.on('data', (chunk) => {
+  writer.write(chunk);
+});
+
+// when all data is read, signal to Node that 
+// we no longer need the writable stream
+reader.on('end', () => {
+  writer.end();
+});
+reader.on('error', (err) => {
+  console.log(err);
+});
 
 
 
