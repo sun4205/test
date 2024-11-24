@@ -80,6 +80,38 @@ module.exports = {
 //importing
 const { someFunction, someValue } = require('./utils');
 
+//working with module
+const fs = require('fs');
+
+fs.readFile('data.json', (err, data) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+
+  console.log('data: ', data.toString('utf8'));
+});
+
+//create folder
+fs.mkdir('incomingData/data', (err) => {
+  if (err) console.log(err);
+});
+
+//write data
+fs.writeFile('data.json', JSON.stringify([1, 2, 3]), (err) => {
+  if (err) console.log(err);
+});
+
+//delete data
+fs.unlink('data.json', (err) => {
+  if (err) {
+    console.log(err);
+    return;
+  }
+
+  console.log('The file was deleted!'); 
+});
+
 
 
 
