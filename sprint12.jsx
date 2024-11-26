@@ -18,7 +18,6 @@ const http = require("http");
 // const http = require('http');
 // const {PORT = 3000} = process.env;
 
-
 const markup = `
   <!DOCTYPE html>
   <html>
@@ -61,138 +60,135 @@ const markup = `
 //         'Content-Type': 'text/html'
 //     });
 //   res.end(markup);
-  
+
 // });
 // server.listen(PORT);
 
 //exporting moduls
 const someFunction = () => {
-  console.log('I was exported!');
+  console.log("I was exported!");
 };
 
 const someValue = 42;
 
 module.exports = {
   someFunction,
-  someValue
+  someValue,
 };
 
 //importing
-const { someFunction, someValue } = require('./utils');
+const { someFunction, someValue } = require("./utils");
 
 //working with module
-const fs = require('fs');
+const fs = require("fs");
 
-fs.readFile('data.json', (err, data) => {
+fs.readFile("data.json", (err, data) => {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('data: ', data.toString('utf8'));
+  console.log("data: ", data.toString("utf8"));
 });
 
 //create folder
-fs.mkdir('incomingData/data', (err) => {
+fs.mkdir("incomingData/data", (err) => {
   if (err) console.log(err);
 });
 
 //write data
-fs.writeFile('data.json', JSON.stringify([1, 2, 3]), (err) => {
+fs.writeFile("data.json", JSON.stringify([1, 2, 3]), (err) => {
   if (err) console.log(err);
 });
 
 //delete data
-fs.unlink('data.json', (err) => {
+fs.unlink("data.json", (err) => {
   if (err) {
     console.log(err);
     return;
   }
 
-  console.log('The file was deleted!'); 
+  console.log("The file was deleted!");
 });
 
 //working with streams
-const reader = fs.createReadStream('./in.txt', { encoding: 'utf8' });
-const writer = fs.createWriteStream('./out.txt', { encoding: 'utf8' });
+const reader = fs.createReadStream("./in.txt", { encoding: "utf8" });
+const writer = fs.createWriteStream("./out.txt", { encoding: "utf8" });
 
-reader.on('data', (chunk) => {
+reader.on("data", (chunk) => {
   writer.write(chunk);
 });
 
-// when all data is read, signal to Node that 
+// when all data is read, signal to Node that
 // we no longer need the writable stream
-reader.on('end', () => {
+reader.on("end", () => {
   writer.end();
 });
-reader.on('error', (err) => {
+reader.on("error", (err) => {
   console.log(err);
 });
 
 //express setting up routing
-const express = require('express');
+const express = require("express");
 
 const { PORT = 3000, BASE_PATH } = process.env;
 const app = express();
 
 const animals = [
   {
-    kind: 'dog',
-    breed: 'chihuahua'
+    kind: "dog",
+    breed: "chihuahua",
   },
   {
-    kind: 'dog',
-    breed: 'bloodhound'
+    kind: "dog",
+    breed: "bloodhound",
   },
   {
-    kind: 'dog',
-    breed: 'german shepherd'
+    kind: "dog",
+    breed: "german shepherd",
   },
   {
-    kind: 'cat',
-    breed: 'abyssinian'
+    kind: "cat",
+    breed: "abyssinian",
   },
   {
-    kind: 'cat',
-    breed: 'dwelf'
+    kind: "cat",
+    breed: "dwelf",
   },
   {
-    kind: 'cat',
-    breed: 'highlander'
-  }
+    kind: "cat",
+    breed: "highlander",
+  },
 ];
 
-app.get('/animals', (req, res) => {
-  
+app.get("/animals", (req, res) => {
   let result = animals;
 
-  
   if (req.query.kind) {
-    result = result.filter(item => item.kind === req.query.kind)
+    result = result.filter((item) => item.kind === req.query.kind);
   }
 
   if (req.query.breed) {
-    result = result.filter(item => item.breed === req.query.breed)
+    result = result.filter((item) => item.breed === req.query.breed);
   }
 
   res.send(result);
 });
 
 app.listen(PORT, () => {
-  console.log('Link to the server:');
+  console.log("Link to the server:");
   console.log(BASE_PATH);
 });
 
-
 //routing
-const router = require('express').Router();
-const { users } = require('./db');
+const router = require("express").Router();
+const { users } = require("./db");
 
-router.get('/users', (req, res) => {
+router.get("/users", (req, res) => {
   res.send(users);
 });
 
-router.get('/users/:id', (req, res) => {
+router.get("/users/:id", (req, res) => {
   const { id } = req.params;
 
   if (!users[id]) {
@@ -205,5 +201,15 @@ router.get('/users/:id', (req, res) => {
 
 module.exports = router;
 
+//connecting mongoDB from javascript via Mongoose
 
+const express = require("express");
+const mongoose = require("mongoose");
 
+mongoose.connect("mongodb://127.0.0.1:27017/mydb", {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+});
+
+app.listen(3000);
