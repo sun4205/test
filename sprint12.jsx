@@ -129,6 +129,60 @@ reader.on('error', (err) => {
   console.log(err);
 });
 
+//express setting up routing
+const express = require('express');
+
+const { PORT = 3000, BASE_PATH } = process.env;
+const app = express();
+
+const animals = [
+  {
+    kind: 'dog',
+    breed: 'chihuahua'
+  },
+  {
+    kind: 'dog',
+    breed: 'bloodhound'
+  },
+  {
+    kind: 'dog',
+    breed: 'german shepherd'
+  },
+  {
+    kind: 'cat',
+    breed: 'abyssinian'
+  },
+  {
+    kind: 'cat',
+    breed: 'dwelf'
+  },
+  {
+    kind: 'cat',
+    breed: 'highlander'
+  }
+];
+
+app.get('/animals', (req, res) => {
+  
+  let result = animals;
+
+  
+  if (req.query.kind) {
+    result = result.filter(item => item.kind === req.query.kind)
+  }
+
+  if (req.query.breed) {
+    result = result.filter(item => item.breed === req.query.breed)
+  }
+
+  res.send(result);
+});
+
+app.listen(PORT, () => {
+  console.log('Link to the server:');
+  console.log(BASE_PATH);
+});
+
 
 
 
