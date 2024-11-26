@@ -213,3 +213,29 @@ mongoose.connect("mongodb://127.0.0.1:27017/mydb", {
 });
 
 app.listen(3000);
+
+//creating schema
+
+const userSchema = new mongoose.Schema({
+  name: { 
+    type: String, 
+    required: true, 
+    minlength: 2, 
+    maxlength: 30, 
+  },
+  pronouns: {
+    type: String, 
+    enum: ['they/them', 'she/her', 'he/him', 'other pronouns'] 
+  },
+    age: { 
+        type: Number, 
+        required: true, 
+        validate: { 
+            validator(v) { 
+                return v >= 18; 
+            },
+            message: 'Sorry. You have to be at least 18 years old', 
+        }
+    },
+  about: String,
+});
