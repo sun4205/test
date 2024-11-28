@@ -132,7 +132,7 @@ reader.on("error", (err) => {
 const express = require("express");
 
 const { PORT = 3000, BASE_PATH } = process.env;
-const app = express();
+// const app = express();
 
 const animals = [
   {
@@ -239,5 +239,26 @@ const userSchema = new mongoose.Schema({
     },
   about: String,
 });
+
+//express
+const express = require('express');
+const app = express();
+
+app.get('/', (req,res)=>{
+  res.send('hello,Node');
+})
+
+app.get('/contacts' ,(req,res)=>{
+  res.send('Contacts Page');
+})
+
+app.post('/contacts',(req,res)=>{
+  res.send('create contacts');
+})
+app.listen(3000, ()=>{
+  console.log('server is working');
+})
+
+
 
 
