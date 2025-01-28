@@ -15,3 +15,17 @@ const openRemoveItemModal = (card) => {
     setSelectedCard(card);
     openRemoveItemModal(card);
   };
+  
+  const handleAddClick = () => {
+    setActiveModal("add-garment");
+  };
+
+  const changeCurrentUserData = (username, avatar) => {
+    setActiveModal("Edit-profile");
+    console.log("clicked");
+  };
+
+  const openRegisterModal = () => {
+    console.log("Opening register modal");
+    setActiveModal("register");
+  };
