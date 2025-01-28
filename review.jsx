@@ -1,29 +1,5 @@
-const Avatar = ({ avatar, name }) => {
-    const [error, setError] = useState(false);
-  
-    const userInitial = name ? name[0].toUpperCase() : "?";
-  
-    React.useEffect(() => {
-      if (avatar && avatar !== "" && error) {
-        setError(false);
-      }
-    }, [avatar]);
-    return (
-        <>
-          {error ? (
-            <div className="avatar-placeholder">{userInitial}</div>
-          ) : (
-            <img
-              src={avatar}
-              className="avatar-image"
-              alt={name}
-              onError={() => setError(true)}
-            />
-          )}
-        </>
-      );
-    
+const openRemoveItemModal = (card) => {
+    setSelectedCard(card);
+    setIsRemoveItemModalOpen(true);
   };
-  
-  export default Avatar;
-  
+  const closeRemoveItemModal = () => setIsRemoveItemModalOpen(false);
