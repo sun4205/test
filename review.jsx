@@ -8,7 +8,20 @@ const Avatar = ({ avatar, name }) => {
         setError(false);
       }
     }, [avatar]);
-  
+    return (
+        <>
+          {error ? (
+            <div className="avatar-placeholder">{userInitial}</div>
+          ) : (
+            <img
+              src={avatar}
+              className="avatar-image"
+              alt={name}
+              onError={() => setError(true)}
+            />
+          )}
+        </>
+      );
     
   };
   
