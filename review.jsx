@@ -29,3 +29,17 @@ const openRemoveItemModal = (card) => {
     console.log("Opening register modal");
     setActiveModal("register");
   };
+
+  const openLoginModal = () => {
+    console.log("opening login modal ");
+    setActiveModal("login");
+  };
+
+  const closeActiveModal = () => {
+    setActiveModal("");
+  };
+
+  const handleToggleSwitchChange = () => {
+    if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
+    if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
+  };
